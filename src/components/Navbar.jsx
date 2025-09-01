@@ -17,58 +17,60 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
-    closeMenu();
+    setIsMenuOpen(false);
+  };
+
+  const scrollToHome = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="nav-content">
-          <div className="nav-logo">
-            <span className="chef-hat-icon floating">👨‍🍳</span>
+          <div className="nav-logo" onClick={scrollToHome} style={{ cursor: 'pointer' }}>
+            <span className="chef-hat-icon">👨‍🍳</span>
             <h2>烹飪社團</h2>
           </div>
           
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <ul className="nav-list">
               <li className="nav-item">
-                <a href="#home" onClick={() => scrollToSection('home')} className="nav-link">
+                <a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToHome(); }}>
                   首頁
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#news" onClick={() => scrollToSection('news')} className="nav-link">
+                <a href="#news" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('news'); }}>
                   最新消息
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#gallery" onClick={() => scrollToSection('gallery')} className="nav-link">
+                <a href="#gallery" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('gallery'); }}>
                   作品展示
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#about" onClick={() => scrollToSection('about')} className="nav-link">
+                <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
                   關於我們
                 </a>
               </li>
             </ul>
           </div>
-
+          
           <div className="nav-toggle" onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <img src="/assets/icons/close.svg" alt="Close Menu" />
-            ) : (
-              <img src="/assets/icons/menu.svg" alt="Menu" />
-            )}
+            <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>

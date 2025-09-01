@@ -16,20 +16,19 @@ function Footer() {
             </div>
             <p>致力於推廣烹飪文化，讓更多人愛上烹飪藝術</p>
             <div className="social-links">
-              <a href="https://www.facebook.com/?locale=zh_TW" className="social-link">Facebook</a>
-              <a href="https://www.instagram.com/" className="social-link">Instagram</a>
-              <a href="https://www.youtube.com/" className="social-link">YouTube</a>
+              <a href="https://www.facebook.com/?locale=zh_TW" className="social-link">
+                <i className="social-icon">ⓕ</i>
+                Facebook
+              </a>
+              <a href="https://www.instagram.com/" className="social-link">
+                <i className="social-icon">🅾</i>
+                Instagram
+              </a>
+              <a href="https://www.line.me/tw/" className="social-link">
+                <i className="social-icon">✉</i>
+                Line
+              </a>
             </div>
-          </div>
-          
-          <div className="footer-section">
-            <h4>快速連結</h4>
-            <ul className="footer-links">
-              <li><a href="#home">首頁</a></li>
-              <li><a href="#news">最新消息</a></li>
-              <li><a href="#gallery">作品展示</a></li>
-              <li><a href="#about">關於我們</a></li>
-            </ul>
           </div>
           
           <div className="footer-section">

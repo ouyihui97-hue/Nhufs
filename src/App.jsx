@@ -5,6 +5,8 @@ import News from './components/News';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Footer from './components/Footer';
+import './styles/globals.css';
+import './styles/animations.css';
 
 function App() {
   return (

@@ -2,10 +2,10 @@ import React from 'react';
 
 function About() {
   const stats = [
-    { number: "50+", label: "活躍會員" },
-    { number: "100+", label: "分享食譜" },
-    { number: "5+", label: "年經驗" },
-    { number: "20+", label: "專業課程" }
+    { number: "50+", label: "活躍會員", icon: "👥" },
+    { number: "100+", label: "分享食譜", icon: "📖" },
+    { number: "5+", label: "年經驗", icon: "⭐" },
+    { number: "20+", label: "專業課程", icon: "🎓" }
   ];
 
   const features = [
@@ -53,7 +53,7 @@ function About() {
             <ul className="features-list">
               {features.map((feature, index) => (
                 <li key={index} className="feature-item stagger-item">
-                  <span className="feature-icon">{feature.icon}</span>
+                  <span className="feature-icon floating">{feature.icon}</span>
                   <div className="feature-content">
                     <h4>{feature.title}</h4>
                     <p>{feature.description}</p>
@@ -67,6 +67,7 @@ function About() {
             <div className="stats-grid">
               {stats.map((stat, index) => (
                 <div key={index} className="stat-item scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="stat-icon floating">{stat.icon}</div>
                   <div className="stat-number">{stat.number}</div>
                   <div className="stat-label">{stat.label}</div>
                 </div>
@@ -75,12 +76,15 @@ function About() {
             
             <div className="team-image">
               <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="廚師團隊" />
+              <div className="image-overlay">
+                <div className="cooking-elements-mini">
+                  <span className="mini-element ingredient-float">🥕</span>
+                  <span className="mini-element spice-float">🌶️</span>
+                  <span className="mini-element utensil-float">🥄</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div className="about-cta fade-in">
-          <button className="btn pulse">立即加入我們</button>
         </div>
       </div>
     </section>
