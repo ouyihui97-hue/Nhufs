@@ -16,9 +16,9 @@ function Footer() {
             </div>
             <p>致力於推廣烹飪文化，讓更多人愛上烹飪藝術</p>
             <div className="social-links">
-              <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">Instagram</a>
-              <a href="#" className="social-link">YouTube</a>
+              <a href="https://www.facebook.com/?locale=zh_TW" className="social-link">Facebook</a>
+              <a href="https://www.instagram.com/" className="social-link">Instagram</a>
+              <a href="https://www.youtube.com/" className="social-link">YouTube</a>
             </div>
           </div>
           
